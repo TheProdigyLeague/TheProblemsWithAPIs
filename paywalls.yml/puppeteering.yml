@@ -1,0 +1,11 @@
+{lang_name}
+{% for item in lang_content %}
+* <a href="{{item.link}}" class="external-link" target"_blank">{item.title}</a>
+<a href="{{ item.author_link }}" class="external-link" target="_blank"</a>
+ {{ item.author }}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+# Projekte
+## Die neuesten GitHub-Projekte zum Thema `fastapi`:
+<div class="github-topic-projects"></div>
