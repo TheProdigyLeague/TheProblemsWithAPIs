@@ -1,2 +1,2 @@
-1.) In Sponsors.yml no ""'s in code.
-2.)
+1.) In Sponsors.yml inconsistent ""'s in code.
+2.) In main.py inconsistent grammar
