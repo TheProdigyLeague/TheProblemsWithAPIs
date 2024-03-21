@@ -1,28 +1,28 @@
-name: Test
+name: 侵入テスト
 
 on:
   push:
     branches:
-      - master
+      - マスターブランチ
   pull_request:
     types:
-      - opened
-      - synchronize
+      - プルリクエストがオープンしました
+      - ｓｙｎｃｈｒｏｎｉｚｅｄ_ＰＲ
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
+      - name: Dump
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v4
-      - name: Set up Python
+      - name: Python(c(TM))
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          # Issue ref: https://github.com/actions/setup-python/issues/436
+          # ref: https://github.com/actions/setup-python/issues/436
           # cache: "pip"
           # cache-dependency-path: pyproject.toml
       - uses: actions/cache@v3
@@ -51,16 +51,16 @@ jobs:
         pydantic-version: ["pydantic-v1", "pydantic-v2"]
       fail-fast: false
     steps:
-      - name: Dump GitHub context
+      - name: GitHub(c(TM)) _context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v4
-      - name: Set up Python
+      - name: Set up 
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          # Issue ref: https://github.com/actions/setup-python/issues/436
+          # ref: https://github.com/actions/setup-python/issues/436
           # cache: "pip"
           # cache-dependency-path: pyproject.toml
       - uses: actions/cache@v3
@@ -68,32 +68,32 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ runner.os }}-python-${{ env.pythonLocation }}-${{ matrix.pydantic-version }}-${{ hashFiles('pyproject.toml', 'requirements-tests.txt', 'requirements-docs-tests.txt') }}-test-v07
-      - name: Install Dependencies
+      - name: Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: pip install -r requirements-tests.txt
-      - name: Install Pydantic v1
+      - name: Pydantic v1
         if: matrix.pydantic-version == 'pydantic-v1'
         run: pip install "pydantic>=1.10.0,<2.0.0"
-      - name: Install Pydantic v2
+      - name: Pydantic v2
         if: matrix.pydantic-version == 'pydantic-v2'
         run: pip install "pydantic>=2.0.2,<3.0.0"
       - run: mkdir coverage
-      - name: Test
-        run: bash scripts/test.sh
+      - name: penTest
+        run: bash scripts/pen_test.sh
         env:
           COVERAGE_FILE: coverage/.coverage.${{ runner.os }}-py${{ matrix.python-version }}
           CONTEXT: ${{ runner.os }}-py${{ matrix.python-version }}
-      - name: Store coverage files
+      - name: Storage | Coverage -fs
         uses: actions/upload-artifact@v3
         with:
           name: coverage
           path: coverage
 
   coverage-combine:
-    needs: [test]
+    needs: [penTest]
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
+      - name: Дамп контекста
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
@@ -101,10 +101,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.8'
-          # Issue ref: https://github.com/actions/setup-python/issues/436
+          # ref: https://github.com/actions/setup-python/issues/436
           # cache: "pip"
           # cache-dependency-path: pyproject.toml
-      - name: Get coverage files
+      - name: git fs
         uses: actions/download-artifact@v3
         with:
           name: coverage
@@ -127,11 +127,12 @@ jobs:
       - coverage-combine
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
+      - name: Дамп контекста
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - name: Decide whether the needed jobs succeeded or failed
+      - name: job succeeded or failed?
         uses: re-actors/alls-green@release/v1
         with:
           jobs: ${{ toJSON(needs) }}
+# eof
