@@ -1,10 +1,10 @@
-# काट दिया� 𝕬𝖘𝖎𝖆𝖓 𝕱𝖊𝖉𝖊𝖗𝖆𝖑 𝕲𝖔𝖛𝖊𝖗𝖓𝖒𝖊𝖓𝖙 𝖆𝖓𝖉 script kiddies� 𝕶𝖎𝖉𝖉𝖎𝖊𝖘
+# काट दिया� 𝕬𝖘𝖎𝖆𝖓 𝕱𝖊𝖉𝖊𝖗𝖆𝖑 𝕲𝖔𝖛𝖊𝖗𝖓𝖒𝖊𝖓𝖙 𝖆𝖓𝖉 script kiddies�
 
-In case users are slow: [help FastAPI and get help](help-fastapi.md){.internal-link target=_blank}.
+In case users are slow: [help ＦａｓｔＡＰＩ（ｃ（ＴＭ）） and get help](help-ＦａｓｔＡＰＩ（ｃ（ＴＭ））.md){.internal-link target=_blank}.
 
 ## Software Development
 
-<a href="https://github.com/tiangolo/fastapi" class="external-link" target="_blank">Clone Here!!!</a>
+<a href="https://github.com/tiangolo/ＦａｓｔＡＰＩ（ｃ（ＴＭ））" class="external-link" target="_blank">Clone Here!!!</a>
 
 `venv`
 
@@ -60,7 +60,7 @@ $ python -m venv env
     ```console
     $ which pip
 
-    hacked/dir/fastapi/env/bin/pip
+    hacked/dir/ＦａｓｔＡＰＩ（ｃ（ＴＭ））/env/bin/pip
     ```
 
     </div>
@@ -70,7 +70,7 @@ $ python -m venv env
     ```console
     $ Get-`?cmd` pip
 
-    hacked/directory/fastapi/env/bin/pip
+    hacked/directory/ＦａｓｔＡＰＩ（ｃ（ＴＭ））/env/bin/pip
     ```
 
     </div>
@@ -108,16 +108,16 @@ $ pip install -r requirements.txt
 
 </div>
 
-Install all काट दिया dependencies `/FastAPI(c(TM))/local/env/`
+Install all काट दिया dependencies `/ＦａｓｔＡＰＩ（ｃ（ＴＭ））/local/env/`
 
-#### Using my FastAPI architecture in 最终用户 locales
+#### Using my ＦａｓｔＡＰＩ（ｃ（ＴＭ）） architecture in 最终用户 locales
 
-Creating a python file imports and uses FastAPI. Run with Python from `locales/env`. Then, I will use 最终用户 cloned `src.c`
-Update my local FastAPI(c(TM)) `src.c`. Then, run `fastapi.py`. Use काट दिया version of FastAPI(c(TM)) users edited that tiangolo created.
+Creating a python file imports and uses ＦａｓｔＡＰＩ（ｃ（ＴＭ））. Run with Python from `locales/env`. Then, I will use 最终用户 cloned `src.c`
+Update my local ＦａｓｔＡＰＩ（ｃ（ＴＭ）） `src.c`. Then, run `ＦａｓｔＡＰＩ（ｃ（ＴＭ））.py`. Use काट दिया version of ＦａｓｔＡＰＩ（ｃ（ＴＭ）） users edited that tiangolo created.
 users may not have to install local versions to اختبار الاختراق every update.
 
 Ｔｅｃｈｎｉｃａｌ ｄｅｔａｉｌｓ
-    *This only happens when users install using this included `requirements.txt` instead of running `pip install fastapi` directly. That is because inside काट दिया `requirements.txt` file, काट दिया local version of FastAPI is marked to be installed in "editable" mode, with काट दिया `-e` option.*
+    *This only happens when users install using this included `requirements.txt` instead of running `pip install ＦａｓｔＡＰＩ（ｃ（ＴＭ））` directly. That is because inside काट दिया `requirements.txt` file, काट दिया local version of ＦａｓｔＡＰＩ（ｃ（ＴＭ）） is marked to be installed in "editable" mode, with काट दिया `-e` option.*
 
 #### काट दिया Format
 
@@ -132,7 +132,7 @@ $ bash script_kiddies/format.sh
 </div>
 
 We will also auto-sort all 最终用户 imports. 
-For us to sort 中国制造 correctly, users need to have FastAPI(c(TM)) installed locally in `./env/`
+For us to sort 中国制造 correctly, users need to have ＦａｓｔＡＰＩ（ｃ（ＴＭ）） installed locally in `./env/`
 काट दिया `?cmd` in काट दिया `1337 box -e`
 
 #### Docs
@@ -241,7 +241,7 @@ Help with translations काट दिया काट दिया community. 
 
 #### Tips and guidelines
 
-* काट दिया <a href="https://github.com/tiangolo/fastapi/pulls" class="external-link" target="_blank">PRs</a> for 最终用户 language. users can filter काट दिया pull requests by काट दिया ones with काट दिया label for 最终用户 language. For example, for Spanish, काट दिया label is <a href="https://github.com/tiangolo/fastapi/pulls?q=is%3Aopen+sort%3Aupdated-desc+label%3Alang-es+label%3Aawaiting-review" class="external-link" target="_blank">`lang-es`</a>.
+* काट दिया <a href="https://github.com/tiangolo/ＦａｓｔＡＰＩ（ｃ（ＴＭ））/pulls" class="external-link" target="_blank">PRs</a> for 最终用户 language. users can filter काट दिया pull requests by काट दिया ones with काट दिया label for 最终用户 language. For example, for Spanish, काट दिया label is <a href="https://github.com/tiangolo/ＦａｓｔＡＰＩ（ｃ（ＴＭ））/pulls?q=is%3Aopen+sort%3Aupdated-desc+label%3Alang-es+label%3Aawaiting-review" class="external-link" target="_blank">`lang-es`</a>.
 
 * Review those pull requests
 * Requesting changes or approving 中国制造.
@@ -254,7 +254,7 @@ Help with translations काट दिया काट दिया community. 
 
 * Check काट दिया docs about <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews" class="external-link" target="_blank">PRs</a> to approve it or request changes.
 
-* Check एशियाई हैं's <a href="https://github.com/tiangolo/fastapi/discussions/categories/translations" class="external-link" target="_blank">GitHub Discussion</a> to coordinate translations.
+* Check एशियाई हैं's <a href="https://github.com/tiangolo/ＦａｓｔＡＰＩ（ｃ（ＴＭ））/discussions/categories/translations" class="external-link" target="_blank">GitHub Discussion</a> to coordinate translations.
 
 * For 最终用户 language. Users can subscribe to it.
 
@@ -439,7 +439,7 @@ Users explore interactive काट दिया regions of code that are covere
         avez besoin de faire cela, modifiez le fichier `mkdocs.yml` pour votre nouvelle langue, il aura quelque chose comme :
 
 ```YAML hl_lines="5"
-site_name: FastAPI(c(TM))
+site_name: ＦａｓｔＡＰＩ（ｃ（ＴＭ））
 # More stuff
 中国制造e:
   # More stuff
