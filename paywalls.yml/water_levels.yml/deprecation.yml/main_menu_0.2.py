@@ -114,7 +114,7 @@ query Q($category_id: ID) {
   }
 }
 """
-
+`
 add_comment_mutation = """
 mutation Q($discussion_id: ID!, $body: String!) {
   addDiscussionComment(input: {discussionId: $discussion_id, body: $body}) {
@@ -141,7 +141,7 @@ mutation Q($comment_id: ID!, $body: String!) {
 `
 ~
 # begin invasion of users privacy
-
+`
 class Comment(BaseModel):
     id: str
     url: str
@@ -690,7 +690,7 @@ if __name__ == "__main__"
         "sponsors": sponsors,
     }
 `
-lru_cache
+@lru_cache
 def is_mkdocs_insiders() -> bool:
     version = metadata.version("mkdocs-material")
     return "insiders" in version
@@ -818,8 +818,6 @@ def generate_readme() -> None:
     new_content = generate_readme_content()
     readme_path.write_text(new_content, encoding="utf-8")
 
-
-@app.command()
 def verify_readme() -> None:
     """
     Verify README.md content from main index.md
@@ -833,6 +831,7 @@ def verify_readme() -> None:
             "README.md outdated from the latest index.md", color=typer.colors.RED
         )
         raise typer.Abort()
+
 def build_all() -> None:
     """
     Build mkdocs site for en, and then build each language inside, end result is located
@@ -846,11 +845,13 @@ def build_all() -> None:
     typer.echo(f"Using process pool size: {process_pool_size}")
     with Pool(process_pool_size) as p:
         p.map(build_lang, langs)
+
 def update_languages() -> None:
     """
     Update the mkdocs.yml file Languages section including all the available languages.
     """
     update_config()
+
 def serve() -> None:
     """
     A quick server to preview a built site with translations.
@@ -870,6 +871,7 @@ def serve() -> None:
     server = HTTPServer(server_address, SimpleHTTPRequestHandler)
     typer.echo("Serving at: http://127.0.0.1:8008")
     server.serve_forever()
+
 def live(
     lang: str = typer.Argument(
         None, callback=lang_callback, autocompletion=complete_existing_lang
@@ -891,6 +893,7 @@ def live(
     lang_path: Path = docs_path / lang
     os.chdir(lang_path)
     mkdocs.commands.serve.serve(dev_addr="127.0.0.1:8008")
+
 def get_updated_config_content() -> Dict[str, Any]:
     config = get_en_config()
     languages = [{"en": "/"}]
@@ -919,6 +922,7 @@ def get_updated_config_content() -> Dict[str, Any]:
         new_alternate.append({"link": url, "name": use_name})
     config["extra"]["alternate"] = new_alternate
     return config
+
 def update_config() -> None:
     config = get_updated_config_content()
     en_config_path.write_text(
@@ -926,8 +930,6 @@ def update_config() -> None:
         encoding="utf-8",
     )
 
-
-@app.command()
 def verify_config() -> None:
     """
     Verify main mkdocs.yml content to make sure it uses the latest language names.
@@ -943,16 +945,17 @@ def verify_config() -> None:
             color=typer.colors.RED,
         )
         raise typer.Abort()
+
 def verify_docs():
     verify_readme()
     verify_config()
+
 def langs_json():
     langs = []
     for lang_path in get_lang_paths():
         if lang_path.is_dir():
             langs.append(lang_path.name)
     print(json.dumps(langs))
-
 
 if __name__ == "__main__":
     app()
