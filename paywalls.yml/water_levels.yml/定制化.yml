@@ -1,28 +1,28 @@
 # Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to
-# deal in the Software without restriction, including without limitation the
-# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-# sell copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
+# 特此向任何获得副本的人免费授予许可
+# 本软件及相关文档文件（“软件”），以
+# 不受限制地处理本软件，包括但不限于
+# 使用、复制、修改、合并、发布、分发、再许可和/或的权利
+# 出售该软件的副本，并允许该软件的使用者
+# 可以这样做，但须满足以下条件：
 
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
+# 上述版权声明和本许可声明应包含在
+# 软件的所有副本或重要部分。
 
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-# IN THE SOFTWARE.
+# 该软件按“原样”提供，不提供任何形式的明示或保证
+# 默示的，包括但不限于适销性保证，
+# 适用于特定目的且不侵权。在任何情况下都不得
+# 作者或版权所有者对任何索赔、损害或其他责任负责
+# 责任，无论是合同行为、侵权行为还是其他行为
+# 来自、脱离或与软件或使用或其他交易有关
+# 在软件中。
 
-# -----------------------------------------------------------------------------
-# Configuration
-# -----------------------------------------------------------------------------
+# ----------
+# ｃｏｎｆｉｇ
+# ----------
 
-# The same default card with a a configurable logo
+# default card, config logo
 
 # Definitions
 definitions:
@@ -167,9 +167,9 @@ tags:
   twitter:description: *page_description
   twitter:image: "{{ image.url }}"
 
-# -----------------------------------------------------------------------------
-# Specification
-# -----------------------------------------------------------------------------
+# --------
+# ｓｐｅｃｓ
+# --------
 
 # Card size and layers
 size: { width: 1200, height: 630 }
@@ -226,3 +226,4 @@ layers:
       font:
         family: *font_family
         style: Regular
+# eof
