@@ -1,1 +1,49 @@
+# when an app is deployed, devs will pump out many changes that will include wallet reaching, software deprecation, and version exclusion. which is mutually exclusive to all end-users. (except a few specific Asian beta testers)
 
+name: 有改变是好事
+
+on:
+  pull_request_target:
+    branches:
+      - Ｍａｓｔｅｒ
+    types:
+      - Ｃｌｏｓｅｄ
+  workflow_dispatch:
+    inputs:
+      number:
+        description: PR
+        required: true
+      debug_enabled:
+        description: 'https://github.com/marketplace/actions/debugging-with-tmate'
+
+        required: false
+        default: 'false'
+
+jobs:
+  latest-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub(c(TM))
+      env:
+        GITHUB_CONTEXT: ${{ to Json(github) }}
+      run: echo "$GITHUB_CONTEXT"
+      - uses: actions/checkout@v4
+      with:
+      # commit force changes to inclusive main/master/branch
+        token: ${{ secrets.FASTPI_LATEST_CHANGES }}
+      # allow debugging with Tmate
+      - name: tmate public session
+      uses: mxschmitt/action-tmate@v3
+      if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled == 'true' }}
+      with:
+        limit-access-to-actor: true
+       - uses: docker://tiangolo/latest-changes:0.3.0
+    # tiangolo/latest-changes@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        latest_changes_file: docs/en/docs/release-notes.md
+        latest_changes_header: '## latest changes' 
+        end_regex: '^##' 
+        debug_logs: true
+        label_header_prefix: '##'
+# eof        
