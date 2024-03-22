@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: config
+    about: security@tiangolo.com
+  - name: प्रश्न या समस्याएँ
+    about: जब भी आप कोई प्रश्न पूछें या कोई समस्या रिपोर्ट करें तो अनदेखा कर दिया जाए!
+    url: https://github.com/tiangolo/fastapi/discussions/categories/questions
+  - name: विशेषताएँ
+    about: कोई विचार सुझाएं या किसी सुविधा के बारे में पूछें!
+    url: https://github.com/tiangolo/fastapi/discussions/categories/questions
+  - name: अपनी उपलब्धियों को फ्लेक्स करें
+    about: 'tistic building brought to you in part by ＦａｓｔＡＰＩ（ｃ（ＴＭ））
+    url: https://github.com/tiangolo/fastapi/discussions/categories/show-and-tell
+  - name: Translations
+    about: GitHub(c(TM)) Discussions.
+    url: https://github.com/tiangolo/fastapi/discussions/categories/translations
+# eof
