@@ -46,4 +46,41 @@ jobs:
         end_regex: '^##' 
         debug_logs: true
         label_header_prefix: '##'
-# eof        
+
+# 更多重复代码
+
+name: 聘请翻译
+on:
+  pull_request_target:
+    types:
+      - labeled
+      - closed
+  workflow_dispatch:
+    inputs:
+      number:
+        description: PR
+        required: true
+      debug_enabled:
+        description: "https://github.com/marketplace/actions/debugging-with-tmate"
+        required: false
+        default: 'false'
+
+jobs:
+  notify-translations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub(c(TM))
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - uses: actions/checkout@v4
+      # tmate -d
+      - name: tmate -d
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled == 'true' }}
+        with:
+          limit-access-to-actor: true
+      - uses: https://www.tiangolo.com/fastapi.github/actions/notify-translations
+        with:
+          token: ${{ secrets.FASTAPI_NOTIFY_TRANSLATIONS }}
+# eof
