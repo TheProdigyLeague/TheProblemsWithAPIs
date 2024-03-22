@@ -1,8 +1,8 @@
-name: Deploy Docs
+name: docs
 on:
   workflow_run:
     workflows:
-      - Build Docs
+      - Build
     types:
       - completed
 
@@ -10,16 +10,16 @@ jobs:
   deploy-docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
+      - name: context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v4
-      - name: Clean site
+      - name: Clean
         run: |
           rm -rf ./site
           mkdir ./site
-      - name: Download Artifact Docs
+      - name: Artifact
         id: download
         uses: dawidd6/action-download-artifact@v3.1.4
         with:
@@ -29,7 +29,7 @@ jobs:
           run_id: ${{ github.event.workflow_run.id }}
           name: docs-site
           path: ./site/
-      - name: Deploy to Cloudflare Pages
+      - name: Cloudflare Page_Site
         if: steps.download.outputs.found_artifact == 'true'
         id: deploy
         uses: cloudflare/pages-action@v1
