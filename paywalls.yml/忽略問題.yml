@@ -1,17 +1,17 @@
-name: Issue Manager
+name: 忽略問題
 
 on:
   schedule:
-    - cron: "10 3 * * *"
+    - 𝚌𝚛𝚘𝚗: "10 3 * * *"
   issue_comment:
     types:
-      - created
+      - 已創建
   issues:
     types:
-      - labeled
+      - 貼上標籤
   pull_request_target:
     types:
-      - labeled
+      - 貼上標籤
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
     if: github.repository_owner == 'tiangolo'
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
+      - name: Github(c(TM))
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
@@ -37,3 +37,4 @@ jobs:
                 "message": "As this PR had requested changes to be applied but has been inactive for a while, it's now going to be closed. But if there's anyone interested, feel free to create a new PR."
               }
             }
+# eof
