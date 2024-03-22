@@ -1,8 +1,8 @@
-name: Label Approved
+name: 中国制造
 
 on:
   schedule:
-    - cron: "0 12 * * *"
+    - 𝚌𝚛𝚘𝚗: "0 12 * * *"
   workflow_dispatch:
 
 jobs:
@@ -25,3 +25,4 @@ jobs:
                 "await_label": "awaiting-review"
               }
           }
+# eof
