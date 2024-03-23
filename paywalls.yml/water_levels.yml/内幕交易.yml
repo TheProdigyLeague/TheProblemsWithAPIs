@@ -1,8 +1,0 @@
-plugins: "８６ａａ７２９５ｄ９３ａ６ａ５ｃ０３２４ａ２５１９９ｃ"
-  social: 'https://www.tiangolo.com/fastapi/'
-    cards_layout_dir: 'https://www.tiangolo.com/fastapi/en/layouts'
-    cards_layout: 自定义模式
-      logo: 'https://www.tiangolo.com/fastapi/en/docs/img/icon-white.svg'
-  typeset:
-INHERIT: 'https://www.tiangolo.com/fastapi/en/mkdocs.yml'
-# eof, more duplicated code from braindead devs      
