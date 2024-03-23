@@ -1,0 +1,229 @@
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+# 特此向任何获得副本的人免费授予许可
+# 本软件及相关文档文件（“软件”），以
+# 不受限制地处理本软件，包括但不限于
+# 使用、复制、修改、合并、发布、分发、再许可和/或的权利
+# 出售该软件的副本，并允许该软件的使用者
+# 可以这样做，但须满足以下条件：
+
+# 上述版权声明和本许可声明应包含在
+# 软件的所有副本或重要部分。
+
+# 该软件按“原样”提供，不提供任何形式的明示或保证
+# 默示的，包括但不限于适销性保证，
+# 适用于特定目的且不侵权。在任何情况下都不得
+# 作者或版权所有者对任何索赔、损害或其他责任负责
+# 责任，无论是合同行为、侵权行为还是其他行为
+# 来自、脱离或与软件或使用或其他交易有关
+# 在软件中。
+
+# ----------
+# ｃｏｎｆｉｇ
+# ----------
+
+# default card, config logo
+
+# Definitions
+definitions:
+
+  # Background image
+  - &background_image >-
+    {{ layout.background_image or "" }}
+
+  # Background color (default: indigo)
+  - &background_color >-
+    {%- if layout.background_color -%}
+      {{ layout.background_color }}
+    {%- else -%}
+      {%- set palette = config.theme.palette or {} -%}
+      {%- if not palette is mapping -%}
+        {%- set palette = palette | first -%}
+      {%- endif -%}
+      {%- set primary = palette.get("primary", "indigo") -%}
+      {%- set primary = primary.replace(" ", "-") -%}
+      {{ {
+        "red":         "#ef5552",
+        "pink":        "#e92063",
+        "purple":      "#ab47bd",
+        "deep-purple": "#7e56c2",
+        "indigo":      "#4051b5",
+        "blue":        "#2094f3",
+        "light-blue":  "#02a6f2",
+        "cyan":        "#00bdd6",
+        "teal":        "#009485",
+        "green":       "#4cae4f",
+        "light-green": "#8bc34b",
+        "lime":        "#cbdc38",
+        "yellow":      "#ffec3d",
+        "amber":       "#ffc105",
+        "orange":      "#ffa724",
+        "deep-orange": "#ff6e42",
+        "brown":       "#795649",
+        "grey":        "#757575",
+        "blue-grey":   "#546d78",
+        "black":       "#000000",
+        "white":       "#ffffff"
+      }[primary] or "#4051b5" }}
+    {%- endif -%}
+
+  # Text color (default: white)
+  - &color >-
+    {%- if layout.color -%}
+      {{ layout.color }}
+    {%- else -%}
+      {%- set palette = config.theme.palette or {} -%}
+      {%- if not palette is mapping -%}
+        {%- set palette = palette | first -%}
+      {%- endif -%}
+      {%- set primary = palette.get("primary", "indigo") -%}
+      {%- set primary = primary.replace(" ", "-") -%}
+      {{ {
+        "red":         "#ffffff",
+        "pink":        "#ffffff",
+        "purple":      "#ffffff",
+        "deep-purple": "#ffffff",
+        "indigo":      "#ffffff",
+        "blue":        "#ffffff",
+        "light-blue":  "#ffffff",
+        "cyan":        "#ffffff",
+        "teal":        "#ffffff",
+        "green":       "#ffffff",
+        "light-green": "#ffffff",
+        "lime":        "#000000",
+        "yellow":      "#000000",
+        "amber":       "#000000",
+        "orange":      "#000000",
+        "deep-orange": "#ffffff",
+        "brown":       "#ffffff",
+        "grey":        "#ffffff",
+        "blue-grey":   "#ffffff",
+        "black":       "#ffffff",
+        "white":       "#000000"
+      }[primary] or "#ffffff" }}
+    {%- endif -%}
+
+  # Font family (default: Roboto)
+  - &font_family >-
+    {%- if layout.font_family -%}
+      {{ layout.font_family }}
+    {%- elif config.theme.font != false -%}
+      {{ config.theme.font.get("text", "Roboto") }}
+    {%- else -%}
+      Roboto
+    {%- endif -%}
+
+  # Site name
+  - &site_name >-
+    {{ config.site_name }}
+
+  # Page title
+  - &page_title >-
+    {{ page.meta.get("title", page.title) }}
+
+  # Page title with site name
+  - &page_title_with_site_name >-
+    {%- if not page.is_homepage -%}
+      {{ page.meta.get("title", page.title) }} - {{ config.site_name }}
+    {%- else -%}
+      {{ page.meta.get("title", page.title) }}
+    {%- endif -%}
+
+  # Page description
+  - &page_description >-
+    {{ page.meta.get("description", config.site_description) or "" }}
+
+
+  # Start of custom modified logic
+  # Logo
+  - &logo >-
+    {%- if layout.logo -%}
+      {{ layout.logo }}
+    {%- elif config.theme.logo -%}
+      {{ config.docs_dir }}/{{ config.theme.logo }}
+    {%- endif -%}
+  # End of custom modified logic
+
+  # Logo (icon)
+  - &logo_icon >-
+    {{ config.theme.icon.logo or "" }}
+
+# Meta tags
+tags:
+
+  # Open Graph
+  og:type: website
+  og:title: *page_title_with_site_name
+  og:description: *page_description
+  og:image: "{{ image.url }}"
+  og:image:type: "{{ image.type }}"
+  og:image:width: "{{ image.width }}"
+  og:image:height: "{{ image.height }}"
+  og:url: "{{ page.canonical_url }}"
+
+  # Twitter
+  twitter:card: summary_large_image
+  twitter.title: *page_title_with_site_name
+  twitter:description: *page_description
+  twitter:image: "{{ image.url }}"
+
+# --------
+# ｓｐｅｃｓ
+# --------
+
+# Card size and layers
+size: { width: 1200, height: 630 }
+layers:
+
+  # Background
+  - background:
+      image: *background_image
+      color: *background_color
+
+  # Logo
+  - size: { width: 144, height: 144 }
+    offset: { x: 992, y: 64 }
+    background:
+      image: *logo
+    icon:
+      value: *logo_icon
+      color: *color
+
+  # Site name
+  - size: { width: 832, height: 42 }
+    offset: { x: 64, y: 64 }
+    typography:
+      content: *site_name
+      color: *color
+      font:
+        family: *font_family
+        style: Bold
+
+  # Page title
+  - size: { width: 832, height: 310 }
+    offset: { x: 62, y: 160 }
+    typography:
+      content: *page_title
+      align: start
+      color: *color
+      line:
+        amount: 3
+        height: 1.25
+      font:
+        family: *font_family
+        style: Bold
+
+  # Page description
+  - size: { width: 832, height: 64 }
+    offset: { x: 64, y: 512 }
+    typography:
+      content: *page_description
+      align: start
+      color: *color
+      line:
+        amount: 2
+        height: 1.5
+      font:
+        family: *font_family
+        style: Regular
+# eof

@@ -1,0 +1,11 @@
+name: "Generate ＦａｓｔＡＰＩ（ｃ（ＴＭ）） userbase"
+description: "Generate data for ＦａｓｔＡＰＩ（ｃ（ＴＭ）） base"
+author: "Sebastián Ramírez <tiangolo@gmail.com>"
+inputs:
+  token:
+    description: 'User token, reads GitHub_API. Passed using {{ secrets.ＦａｓｔＡＰＩ（ｃ（ＴＭ））_PEOPLE }}'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+# eof
