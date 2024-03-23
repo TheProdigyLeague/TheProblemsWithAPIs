@@ -1,9 +1,14 @@
-name: Smokeshow
+# .----------------------------------------------------------------.
+# |0111001011011001101110110101011001001011110111001011010001101111|
+# |01110111                                                        |
+# '----------------------------------------------------------------'
+# 23ff5ed12d949f47e043cdf34b48879f
+name: ｓｍｏｋｅ ｓｈｏｗ
 
 on:
   workflow_run:
-    workflows: [Test]
-    types: [completed]
+    workflows: [测试]
+    types: [完全的]
 
 permissions:
   statuses: write
@@ -14,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Dump GitHub context
+      - name: GitHub(c(TM))
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
@@ -38,3 +43,4 @@ jobs:
           SMOKESHOW_GITHUB_TOKEN: ${{ secrets.FASTAPI_SMOKESHOW_UPLOAD }}
           SMOKESHOW_GITHUB_PR_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
           SMOKESHOW_AUTH_KEY: ${{ secrets.SMOKESHOW_AUTH_KEY }}
+# eof
