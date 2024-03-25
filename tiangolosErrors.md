@@ -7,3 +7,4 @@
 * 7.) In .yml files, inconsistent code "workflow" or "workflows"
 * 8.) In .yml files, inconsistent hyphons "- run"
 * 9.) Constant usage of duplicate codes. *increases bloat and uncessary files need deleted or combined*
+* 10.) In README.md, basic grammar mistakes, dullard style, dolt and improper capitalization, irrelevant commas
