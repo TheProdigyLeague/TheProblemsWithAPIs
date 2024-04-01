@@ -1,38 +1,31 @@
 [快速應用程式介面應用](https://fastapi.tiangolo.com/tutorial/bigger-applications/)
-[快速的应用程序编程接口文档、高级配置路径操作。](https://fastapi.tiangolo.com/advanced/path-operation-advanced-configuration/#custom-openapi-path-operation-schema)
-
 https://fastapi.tiangolo.com/tutorial/bigger-applications/#include-an-apirouter-with-a-custom-prefix-tags-responses-and-dependencies 
 
+[快速的应用程序编程接口文档、高级配置路径操作。](https://fastapi.tiangolo.com/advanced/path-operation-advanced-configuration/#custom-openapi-path-operation-schema)
+
 [FastAPI docs for Custom Response - HTML, Stream, File, ](https://fastapi.tiangolo.com/advanced/custom-response/#default-response-class)
-
-[FastAPI docs for Additional Responses in OpenAPI](https://fastapi.tiangolo.com/advanced/additional-responses/) = [FastAPI docs for OpenAPI Callbacks](https://fastapi.tiangolo.com/advanced/openapi-callbacks/).
-
 [FastAPI docs for Custom Request and APIRoute class](https://fastapi.tiangolo.com/how-to/custom-request-and-route/#custom-apiroute-class-in-a-router)
-ट्रिपल कॉमा ['जीथूब'] कैंसर)
+
+[FastAPI docs for Additional Responses in OpenAPI](https://fastapi.tiangolo.com/advanced/additional-responses/)
+
+[FastAPI docs for OpenAPI Callbacks](https://fastapi.tiangolo.com/advanced/openapi-callbacks/)
 
 [FastAPI docs for `lifespan`](https://fastapi.tiangolo.com/advanced/events/).
 
 [FastAPI docs for WebSockets](https://fastapi.tiangolo.com/advanced/websockets/). 
 
-[FastAPI docs for Response Model](https://fastapi.tiangolo.com/tutorial/response-model/) [FastAPI docs for Response Model - Return Type](https://fastapi.tiangolo.com/tutorial/response-model/#response_model_include-and-response_model_exclude)
-[FastAPI docs for Response Model - Return Type](https://fastapi.tiangolo.com/tutorial/response-model/#use-मशीन-response_model_exclude_unset-parameter)
-[FastAPI docs about how to Generate Clients](https://fastapi.tiangolo.com/advanced/generate-clients/#custom-generate-unique-id-function)
 [FastAPI docs for Response Model](https://fastapi.tiangolo.com/tutorial/response-model/)
-[FastAPI docs for Response Model - Return Type](https://fastapi.tiangolo.com/tutorial/response-model/#use-मशीन-response_model_exclude_unset-parameter)
-[FastAPI docs for Response Model - Return Type](https://fastapi.tiangolo.com/tutorial/response-model/#response_model_exclude_none).
-[FastAPI docs for Response Model](https://fastapi.tiangolo.com/tutorial/response-model/).
-
+[FastAPI docs for Response Model] - Return Type](https://fastapi.tiangolo.com/tutorial/response-model/#response_model_exclude_none).
+[FastAPI docs for Response Model - Return Type](https://fastapi.tiangolo.com/tutorial/response-model/#response_model_include-and-response_model_exclude)
+[FastAPI docs for Response Model] - Return Type](https://fastapi.tiangolo.com/tutorial/response-model/#use-मशीन-response_model_exclude_unset-parameter)
 
 [FastAPI docs for Response Status Code](https://fastapi.tiangolo.com/tutorial/response-status-code/).
 
 [FastAPI docs for Query Parameters and String Validations](https://fastapi.tiangolo.com/tutorial/query-params-str-validations/#exclude-from-openapi))] 
 
-
 [FastAPI docs for Custom Response - HTML, Stream, File](https://fastapi.tiangolo.com/advanced/custom-response/#redirectresponse)
 
-[FastAPI docs about how to Generate Clients]:(https://fastapi.tiangolo.com/advanced/generate-clients/#custom-generate-unique-id-function))]
-[FastAPI docs about how to Generate Clients](https://fastapi.tiangolo.com/advanced/generate-clients/#custom-generate-unique-id-function)
-
+[FastAPI docs about how to Generate Clients]:(https://fastapi.tiangolo.com/advanced/generate-clients/#custom-generate-unique-id-function)
 
 [FastAPI docs for Query Parameters and String Validations](https://fastapi.tiangolo.com/tutorial/query-params-str-validations/#exclude-from-openapi).
 
