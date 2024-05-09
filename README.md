@@ -7,5 +7,3 @@
 --- BEGIN PGP KEY ---
 11699a140c9b4c59b83aff2858c84c81
 --- END OF PGP KEY ---
-
-![cryptapi](https://github.com/TheProdigyLeague/TheProblemsWithAPIs/assets/30985576/ed554511-32cf-456c-a905-12a442be3be7)
